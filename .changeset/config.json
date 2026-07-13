@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@medano-ui/storybook", "@medano-ui/docs"]
+  "ignore": ["@medano-ui/storybook"]
 }

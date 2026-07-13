@@ -29,7 +29,9 @@ export const Cards: Story = {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <h4>Elevación {elevation}</h4>
-              <p style={{ color: 'var(--medano-ink-secondary)', fontSize: 'var(--medano-text-xs)' }}>
+              <p
+                style={{ color: 'var(--medano-ink-secondary)', fontSize: 'var(--medano-text-xs)' }}
+              >
                 Más cerca del usuario, más luminosa.
               </p>
             </div>

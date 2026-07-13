@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="medano">
+  <defs>
+    <!-- Tile: esquina quieta — 3 esquinas generosas, 1 casi plana en start-start -->
+    <path id="medano-tile" d="M0 28A28 28 0 0 1 28 0L380 0A132 132 0 0 1 512 132L512 380A132 132 0 0 1 380 512L132 512A132 132 0 0 1 0 380Z"/>
+    <clipPath id="medano-clip"><use href="#medano-tile"/></clipPath>
+    <radialGradient id="medano-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(356 138) scale(190)">
+      <stop offset="0" stop-color="#F6E3C4" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#F6E3C4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="medano-sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(342 124) scale(64)">
+      <stop offset="0" stop-color="#F8EEDD"/>
+      <stop offset="1" stop-color="#EBB78D"/>
+    </radialGradient>
+    <linearGradient id="medano-duneA" x1="256" y1="222" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D9825C"/>
+      <stop offset="0.42" stop-color="#C96442"/>
+      <stop offset="1" stop-color="#8F4128"/>
+    </linearGradient>
+    <linearGradient id="medano-duneB" x1="256" y1="366" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2E2724"/>
+      <stop offset="1" stop-color="#231F1D"/>
+    </linearGradient>
+  </defs>
+
+  <use href="#medano-tile" fill="#1F1E1D"/>
+  <g clip-path="url(#medano-clip)">
+    <!-- foco cálido -->
+    <circle cx="356" cy="138" r="190" fill="url(#medano-glow)"/>
+    <circle cx="356" cy="138" r="42" fill="url(#medano-sun)"/>
+    <!-- duna lejana, cara iluminada -->
+    <path d="M-10 330C90 318 190 248 268 230C316 219 356 238 408 266C452 290 490 306 522 314L522 522L-10 522Z" fill="url(#medano-duneA)"/>
+    <!-- cresta con respiro (discontinuidad deliberada) -->
+    <path d="M-10 330C90 318 186 250 258 232" stroke="#F2E4CD" stroke-width="9" stroke-linecap="round"/>
+    <path d="M298 230C340 231 368 244 408 266C452 290 490 306 522 314" stroke="#F2E4CD" stroke-width="9" stroke-linecap="round"/>
+    <!-- duna cercana en sombra -->
+    <path d="M-10 522L-10 408C100 392 210 366 306 374C396 381 462 404 522 434L522 522Z" fill="url(#medano-duneB)"/>
+  </g>
+</svg>

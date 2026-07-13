@@ -1,4 +1,9 @@
-# medano
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/medano-logo-dark.svg">
+    <img src="assets/brand/medano-logo-light.svg" alt="medano" width="380">
+  </picture>
+</p>
 
 > Design system dark-first para la era de la IA ambiental.
 > Interfaz que se disuelve. Queda la intención.
@@ -11,14 +16,14 @@ la [investigación](./docs/RESEARCH.md) que lo fundamenta.
 
 ## Paquetes
 
-| Paquete           | Qué es                                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Paquete             | Qué es                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------ |
 | `@medano-ui/tokens` | Design tokens (fuente W3C DTCG) compilados a CSS vars, preset Tailwind v4, TS y JSON para React Native |
 | `@medano-ui/css`    | Reset + estilos base framework-agnostic (Astro, HTML puro)                                             |
-| `@medano-ui/fonts`  | medano Sans (variable, woff2) + `@font-face`                                                             |
-| `@medano-ui/icons`  | Iconografía propia (React, React Native, SVG crudo)                                                    |
-| `@medano-ui/motion` | Springs, duraciones y helpers de animación                                                             |
-| `@medano-ui/react`  | Componentes web (Base UI headless + estilo medano, cero CSS-in-JS runtime)                               |
+| `@medano-ui/fonts`  | medano Sans (variable, woff2) + `@font-face`                                                           |
+| `@medano-ui/icons`  | Iconografía propia (React, React Native, SVG crudo) — _en desarrollo, aún no publicado_                |
+| `@medano-ui/motion` | Springs, duraciones y helpers de animación — _en desarrollo, aún no publicado_                         |
+| `@medano-ui/react`  | Componentes web (Base UI headless + estilo medano, cero CSS-in-JS runtime)                             |
 
 ## Uso rápido (React + Vite)
 

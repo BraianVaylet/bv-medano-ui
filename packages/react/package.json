@@ -3,6 +3,26 @@
   "version": "0.1.0",
   "description": "Componentes React de medano — Base UI headless + estilo medano, cero CSS-in-JS runtime",
   "license": "MIT",
+  "author": "Braian Vaylet <braianvaylet@gmail.com>",
+  "homepage": "https://github.com/BraianVaylet/bv-medano-ui#readme",
+  "bugs": "https://github.com/BraianVaylet/bv-medano-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BraianVaylet/bv-medano-ui.git",
+    "directory": "packages/react"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "base-ui",
+    "accessible",
+    "dark-mode",
+    "medano"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -44,7 +64,7 @@
     "jsdom": "^26.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tsup": "^8.3.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.6.0",
     "vitest": "^3.0.0"
   }

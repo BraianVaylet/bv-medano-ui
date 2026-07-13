@@ -3,6 +3,25 @@
   "version": "0.1.0",
   "description": "Reset y estilos base de medano, framework-agnostic (Astro, HTML puro)",
   "license": "MIT",
+  "author": "Braian Vaylet <braianvaylet@gmail.com>",
+  "homepage": "https://github.com/BraianVaylet/bv-medano-ui#readme",
+  "bugs": "https://github.com/BraianVaylet/bv-medano-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BraianVaylet/bv-medano-ui.git",
+    "directory": "packages/css"
+  },
+  "keywords": [
+    "css",
+    "reset",
+    "base-styles",
+    "design-system",
+    "dark-mode",
+    "medano"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "exports": {
     "./base.css": "./src/base.css"

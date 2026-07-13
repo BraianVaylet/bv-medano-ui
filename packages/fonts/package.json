@@ -3,6 +3,25 @@
   "version": "0.1.0",
   "description": "medano Sans — tipografía variable del sistema (derivada de Hanken Grotesk, SIL OFL)",
   "license": "MIT AND OFL-1.1",
+  "author": "Braian Vaylet <braianvaylet@gmail.com>",
+  "homepage": "https://github.com/BraianVaylet/bv-medano-ui#readme",
+  "bugs": "https://github.com/BraianVaylet/bv-medano-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BraianVaylet/bv-medano-ui.git",
+    "directory": "packages/fonts"
+  },
+  "keywords": [
+    "fonts",
+    "webfont",
+    "variable-font",
+    "woff2",
+    "design-system",
+    "medano"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "exports": {
     "./medano-sans.css": "./dist/medano-sans.css"

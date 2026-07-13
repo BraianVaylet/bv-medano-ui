@@ -7,7 +7,7 @@
  * La fase 2 (fork real con fontmake: ajustes de terminales y glifos) sí
  * requerirá renombrar dentro del binario.
  */
-import { copyFileSync, mkdirSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readdirSync, rmSync, writeFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,6 +29,9 @@ const UNICODE_RANGES = {
     'U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF',
 };
 
+// dist se regenera desde cero: sin limpieza quedarían binarios de marcas
+// anteriores que "files": ["dist"] publicaría a npm.
+rmSync(DIST_DIR, { recursive: true, force: true });
 mkdirSync(DIST_DIR, { recursive: true });
 
 const faces = [];
@@ -60,4 +63,6 @@ if (existsSync(licenseSource)) {
   copyFileSync(licenseSource, join(PKG_DIR, 'LICENSE-OFL.txt'));
 }
 
-console.log(`medano Sans empaquetada: ${faces.length} subsets (${readdirSync(DIST_DIR).join(', ')})`);
+console.log(
+  `medano Sans empaquetada: ${faces.length} subsets (${readdirSync(DIST_DIR).join(', ')})`,
+);

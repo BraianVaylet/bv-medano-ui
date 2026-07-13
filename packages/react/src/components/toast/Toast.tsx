@@ -110,7 +110,9 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           >
             <div className="medano-toast__body">
               <p className="medano-toast__title">{toast.title}</p>
-              {toast.description && <p className="medano-toast__description">{toast.description}</p>}
+              {toast.description && (
+                <p className="medano-toast__description">{toast.description}</p>
+              )}
             </div>
             <button
               type="button"

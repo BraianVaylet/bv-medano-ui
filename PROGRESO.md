@@ -24,7 +24,8 @@ Estado del plan de implementación. Última actualización: 2026-07-12.
   - [x] Textarea, Checkbox, RadioGroup (nativos estilizados) · Select, Tooltip, Accordion (Base UI) · Chip, Avatar, Progress, Toast (propios; toast = feedback ambiental zona baja, pausa en hover)
   - [x] _Lote Chakra (2026-07-13)_ — Layout: Stack, Container, Separator · Texto: Kbd, Code, Link · Acciones: IconButton · Formularios: Slider, NumberInput, PinInput (OTP), SegmentedControl · Datos: Table (genérica, caption obligatorio, estado vacío), Stat (dl/dt/dd, tabular-nums), AvatarGroup, Alert (danger=role alert, resto status), EmptyState · Navegación: Breadcrumb, Pagination · Flotantes: Menu, Popover, Drawer (panel lateral; Dialog sigue siendo el bottom sheet)
 - [ ] **F5 — Motion + AI kit**: `@medano-ui/motion`; `Thinking`, `PromptField`, `GhostDraft`, `Message`.
-- [ ] **F6 — Docs + publicación**: sitio Astro Starlight, guías React/Astro/Tailwind, `changeset publish --dry-run`, v0.1.0 en npm.
+- [x] **Identidad visual + preparación npm** _(2026-07-13)_: logo (duna + foco cálido + esquina quieta + cresta con respiro, wordmark en medano Sans convertida a paths — `assets/brand/`, variantes dark/light en README). Publicación: metadata npm completa (repository/author/keywords/publishConfig) en los 4 paquetes, LICENSE + README por paquete, workflow `release.yml` (changesets/action + npm provenance + permisos mínimos), auditoría de seguridad pre-publicación (0 vulns tras override esbuild ≥0.28.1; sin lifecycle scripts; tarballs auditados con `npm pack --dry-run`; build de fonts ahora limpia `dist` — eliminaba residuos `duna-*` que se habrían publicado).
+- [ ] **F6 — Docs + publicación**: sitio Astro Starlight, guías React/Astro/Tailwind, v0.1.0 en npm (falta: org `medano-ui` en npmjs.com, secret `NPM_TOKEN`, primer changeset).
 - [ ] **F7 — React Native core**: tokens/native ya emitido; faltan componentes RN.
 
 ## Verificado

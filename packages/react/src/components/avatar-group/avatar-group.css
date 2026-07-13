@@ -1,0 +1,21 @@
+.medano-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Solapados: cada avatar recorta al anterior con un anillo del color de fondo */
+.medano-avatar-group .medano-avatar {
+  box-shadow:
+    0 0 0 2px var(--medano-surface-0),
+    var(--medano-halo-edge);
+}
+
+.medano-avatar-group .medano-avatar + .medano-avatar,
+.medano-avatar-group .medano-avatar-group__more {
+  margin-inline-start: -0.5rem;
+}
+
+.medano-avatar-group__more {
+  background: var(--medano-surface-3);
+  color: var(--medano-ink-secondary);
+}

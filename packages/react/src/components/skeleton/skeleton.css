@@ -1,0 +1,22 @@
+.medano-skeleton {
+  background: var(--medano-surface-3);
+  border-radius: var(--medano-radius-sm);
+  min-block-size: 1em;
+  animation: medano-breathe var(--medano-duration-breathe) var(--medano-ease-drift) infinite;
+}
+
+.medano-skeleton[data-circle] {
+  border-radius: var(--medano-radius-full);
+  aspect-ratio: 1;
+}
+
+/* La respiración: firma de los estados de espera de medano */
+@keyframes medano-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}

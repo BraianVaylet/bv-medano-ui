@@ -1,0 +1,49 @@
+.medano-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--medano-space-md);
+  min-block-size: var(--medano-size-tap);
+  cursor: pointer;
+}
+
+.medano-switch-row__label {
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-primary);
+}
+
+.medano-switch {
+  flex-shrink: 0;
+  inline-size: 2.75rem;
+  block-size: 1.625rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--medano-radius-full);
+  background: var(--medano-surface-4);
+  cursor: pointer;
+  transition: background-color var(--medano-duration-base) var(--medano-ease-glide);
+}
+
+.medano-switch[data-checked] {
+  background: var(--medano-accent-base);
+}
+
+.medano-switch[data-disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.medano-switch__thumb {
+  display: block;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin: 0.1875rem;
+  border-radius: var(--medano-radius-full);
+  background: var(--medano-ink-primary);
+  transition: translate var(--medano-duration-base) var(--medano-ease-glide);
+}
+
+.medano-switch__thumb[data-checked] {
+  translate: 1.125rem 0;
+  background: var(--medano-ink-on-accent);
+}

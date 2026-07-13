@@ -1,0 +1,42 @@
+.medano-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--medano-space-2xs);
+  padding: var(--medano-space-2xs) var(--medano-space-xs);
+  border-radius: var(--medano-radius-sm);
+  /* Esquina quieta: el chip contiene un valor, no dispara una acción */
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-2);
+  box-shadow: var(--medano-halo-edge);
+  color: var(--medano-ink-secondary);
+  font-size: var(--medano-text-xs);
+  font-weight: var(--medano-weight-medium);
+}
+
+.medano-chip[data-selected] {
+  background: var(--medano-accent-subtle);
+  color: var(--medano-accent-base);
+}
+
+.medano-chip__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-inline-end: calc(var(--medano-space-2xs) * -1);
+  border: none;
+  border-radius: var(--medano-radius-full);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-chip__remove:hover {
+  background: var(--medano-surface-4);
+}
+
+.medano-chip__remove svg {
+  inline-size: 0.625rem;
+}

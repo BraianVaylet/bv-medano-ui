@@ -1,0 +1,58 @@
+.medano-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--medano-space-xs);
+  min-block-size: var(--medano-size-tap);
+  cursor: pointer;
+  font-size: var(--medano-text-sm);
+}
+
+/* El input real queda encima de la caja: click nativo, foco nativo */
+.medano-check__input {
+  position: absolute;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.medano-check__box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border-radius: var(--medano-radius-xs);
+  background: var(--medano-surface-3);
+  color: var(--medano-ink-on-accent);
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-check__box svg {
+  inline-size: 0.75rem;
+  opacity: 0;
+  scale: 0.6;
+  transition:
+    opacity var(--medano-duration-fast) var(--medano-ease-snap),
+    scale var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-check__input:checked + .medano-check__box {
+  background: var(--medano-accent-base);
+}
+
+.medano-check__input:checked + .medano-check__box svg {
+  opacity: 1;
+  scale: 1;
+}
+
+.medano-check__input:focus-visible + .medano-check__box {
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-check__input:disabled ~ * {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

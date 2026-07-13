@@ -1,0 +1,94 @@
+/* El fondo se esfuma: firma de las superficies flotantes de medano */
+.medano-dialog__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--medano-z-overlay);
+  background: var(--medano-scrim-base);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: medano-fade-in var(--medano-duration-base) var(--medano-ease-glide);
+}
+
+.medano-dialog__backdrop[data-ending-style] {
+  opacity: 0;
+  transition: opacity var(--medano-duration-fast) var(--medano-ease-exit);
+}
+
+/* Mobile primero: bottom sheet */
+.medano-dialog {
+  position: fixed;
+  z-index: var(--medano-z-modal);
+  inset-inline: 0;
+  inset-block-end: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--medano-space-sm);
+  max-block-size: 85dvh;
+  overflow-y: auto;
+  padding: var(--medano-space-lg);
+  padding-block-end: max(var(--medano-space-lg), env(safe-area-inset-bottom));
+  background: var(--medano-surface-4);
+  border-start-start-radius: var(--medano-radius-xl);
+  border-start-end-radius: var(--medano-radius-xl);
+  box-shadow: var(--medano-halo-glow);
+  animation: medano-sheet-up var(--medano-duration-slow) var(--medano-ease-glide);
+}
+
+.medano-dialog[data-ending-style] {
+  translate: 0 100%;
+  transition: translate var(--medano-duration-base) var(--medano-ease-exit);
+}
+
+/* Desktop: centrado, entra con fundido sereno */
+@media (min-width: 48rem) {
+  .medano-dialog {
+    inset: 0;
+    margin: auto;
+    inline-size: min(28rem, calc(100vw - var(--medano-space-xl)));
+    block-size: fit-content;
+    max-block-size: 80dvh;
+    border-radius: var(--medano-radius-xl);
+    border-start-start-radius: var(--medano-radius-quiet);
+    animation: medano-rise-in var(--medano-duration-base) var(--medano-ease-glide);
+  }
+
+  .medano-dialog[data-ending-style] {
+    translate: 0;
+    opacity: 0;
+    scale: 0.97;
+    transition:
+      opacity var(--medano-duration-fast) var(--medano-ease-exit),
+      scale var(--medano-duration-fast) var(--medano-ease-exit);
+  }
+}
+
+.medano-dialog__title {
+  font-size: var(--medano-text-lg);
+  font-weight: var(--medano-weight-semibold);
+  letter-spacing: var(--medano-tracking-tight);
+}
+
+.medano-dialog__description {
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+}
+
+@keyframes medano-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes medano-sheet-up {
+  from {
+    translate: 0 100%;
+  }
+}
+
+@keyframes medano-rise-in {
+  from {
+    opacity: 0;
+    scale: 0.97;
+    translate: 0 var(--medano-space-xs);
+  }
+}

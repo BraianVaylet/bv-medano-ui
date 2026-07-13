@@ -1,0 +1,36 @@
+.medano-stream {
+  font-size: var(--medano-text-sm);
+  line-height: var(--medano-leading-relaxed);
+  white-space: pre-wrap;
+}
+
+/* Tinta fantasma: lo generado se distingue hasta que una persona lo acepta */
+.medano-stream[data-ghost] {
+  color: var(--medano-ink-ghost);
+  font-style: italic;
+}
+
+.medano-stream__chunk {
+  animation: medano-ink-in var(--medano-duration-base) var(--medano-ease-drift);
+}
+
+/* La tinta se asienta: de fantasma a definitiva */
+@keyframes medano-ink-in {
+  from {
+    opacity: 0;
+    color: var(--medano-ink-ghost);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* El sistema respira mientras piensa */
+.medano-stream__pulse {
+  display: inline-block;
+  margin-inline-start: var(--medano-space-2xs);
+  color: var(--medano-accent-base);
+  font-size: 0.6em;
+  vertical-align: middle;
+  animation: medano-breathe var(--medano-duration-breathe) var(--medano-ease-drift) infinite;
+}

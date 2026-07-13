@@ -1,0 +1,63 @@
+.medano-select__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--medano-space-xs);
+  inline-size: 100%;
+  cursor: pointer;
+  text-align: start;
+}
+
+.medano-select__chevron {
+  display: inline-flex;
+  inline-size: 0.75rem;
+  color: var(--medano-ink-muted);
+  transition: rotate var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-select__trigger[data-popup-open] .medano-select__chevron {
+  rotate: 180deg;
+}
+
+.medano-select__popup {
+  z-index: var(--medano-z-overlay);
+  min-inline-size: var(--anchor-width);
+  max-block-size: 16rem;
+  overflow-y: auto;
+  padding: var(--medano-space-3xs);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-5);
+  box-shadow: var(--medano-halo-glow);
+  animation: medano-fade-in var(--medano-duration-fast) var(--medano-ease-glide);
+}
+
+.medano-select__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--medano-space-sm);
+  min-block-size: var(--medano-size-control-sm);
+  padding-inline: var(--medano-space-xs);
+  border-radius: var(--medano-radius-xs);
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+/* La opción resaltada sube de superficie */
+.medano-select__item[data-highlighted] {
+  background: var(--medano-surface-6);
+}
+
+.medano-select__item[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.medano-select__indicator {
+  display: inline-flex;
+  inline-size: 0.75rem;
+  color: var(--medano-accent-base);
+}

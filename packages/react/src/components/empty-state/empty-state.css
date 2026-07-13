@@ -1,0 +1,40 @@
+.medano-empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--medano-space-xs);
+  padding: var(--medano-space-2xl) var(--medano-space-lg);
+  text-align: center;
+}
+
+.medano-empty__icon {
+  display: grid;
+  place-items: center;
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+  border-radius: var(--medano-radius-full);
+  background: var(--medano-surface-2);
+  box-shadow: var(--medano-halo-edge);
+  color: var(--medano-ink-muted);
+  margin-block-end: var(--medano-space-2xs);
+}
+
+.medano-empty__icon svg {
+  inline-size: var(--medano-size-icon-lg);
+}
+
+.medano-empty__title {
+  font-size: var(--medano-text-md);
+  font-weight: var(--medano-weight-semibold);
+  letter-spacing: var(--medano-tracking-tight);
+  color: var(--medano-ink-primary);
+}
+
+.medano-empty__description {
+  max-inline-size: 28rem;
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-empty__action {
+  margin-block-start: var(--medano-space-sm);
+}

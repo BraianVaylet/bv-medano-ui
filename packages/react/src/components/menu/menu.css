@@ -1,0 +1,52 @@
+.medano-menu {
+  z-index: var(--medano-z-overlay);
+  min-inline-size: 11rem;
+  padding: var(--medano-space-3xs);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-5);
+  box-shadow: var(--medano-halo-glow);
+  animation: medano-fade-in var(--medano-duration-fast) var(--medano-ease-glide);
+}
+
+.medano-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-xs);
+  min-block-size: var(--medano-size-control-sm);
+  padding-inline: var(--medano-space-xs);
+  border-radius: var(--medano-radius-xs);
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+.medano-menu__item[data-highlighted] {
+  background: var(--medano-surface-6);
+}
+
+.medano-menu__item[data-danger] {
+  color: var(--medano-feedback-danger);
+}
+
+.medano-menu__item[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.medano-menu__icon {
+  display: inline-flex;
+  inline-size: var(--medano-size-icon-sm);
+  color: var(--medano-ink-muted);
+}
+
+.medano-menu__item[data-danger] .medano-menu__icon {
+  color: inherit;
+}
+
+.medano-menu__separator {
+  block-size: 1px;
+  margin-block: var(--medano-space-3xs);
+  background: var(--medano-border-subtle);
+}

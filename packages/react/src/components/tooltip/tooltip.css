@@ -1,0 +1,13 @@
+.medano-tooltip {
+  z-index: var(--medano-z-tooltip);
+  max-inline-size: 18rem;
+  padding: var(--medano-space-2xs) var(--medano-space-xs);
+  border-radius: var(--medano-radius-sm);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-7);
+  box-shadow: var(--medano-halo-glow);
+  color: var(--medano-ink-primary);
+  font-size: var(--medano-text-2xs);
+  line-height: var(--medano-leading-base);
+  animation: medano-fade-in var(--medano-duration-fast) var(--medano-ease-glide);
+}

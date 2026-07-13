@@ -1,0 +1,73 @@
+{
+  "surface": {
+    "$type": "color",
+    "$description": "La elevación es luz cálida: más cerca del usuario = más luminoso.",
+    "0": { "$value": "{color.tierra.0}" },
+    "1": { "$value": "{color.tierra.1}" },
+    "2": { "$value": "{color.tierra.2}" },
+    "3": { "$value": "{color.tierra.3}" },
+    "4": { "$value": "{color.tierra.4}" },
+    "5": { "$value": "{color.tierra.5}" },
+    "6": { "$value": "{color.tierra.6}" },
+    "7": { "$value": "{color.tierra.7}" }
+  },
+  "ink": {
+    "$type": "color",
+    "primary": { "$value": "{color.crema.100}" },
+    "secondary": { "$value": "{color.crema.70}" },
+    "muted": { "$value": "{color.crema.50}" },
+    "ghost": {
+      "$value": "{color.crema.35}",
+      "$description": "Contenido generado por IA aún no aceptado (GhostDraft)."
+    },
+    "on-accent": { "$value": "oklch(0.18 0.012 85)" },
+    "inverse": { "$value": "{color.cacao.100}" }
+  },
+  "accent": {
+    "$type": "color",
+    "base": { "$value": "{color.brasa.300}" },
+    "strong": { "$value": "{color.brasa.200}" },
+    "subtle": {
+      "$value": "oklch(0.66 0.13 39 / 0.16)",
+      "$description": "Fondo de estados seleccionados/hover de acento."
+    }
+  },
+  "feedback": {
+    "$type": "color",
+    "positive": { "$value": "{color.salvia.300}" },
+    "positive-subtle": { "$value": "oklch(0.74 0.08 150 / 0.14)" },
+    "caution": { "$value": "{color.miel.300}" },
+    "caution-subtle": { "$value": "oklch(0.78 0.09 90 / 0.14)" },
+    "danger": { "$value": "{color.teja.300}" },
+    "danger-subtle": { "$value": "oklch(0.72 0.11 30 / 0.14)" },
+    "info": { "$value": "{color.brasa.200}" },
+    "info-subtle": { "$value": "oklch(0.71 0.115 39 / 0.14)" }
+  },
+  "border": {
+    "$type": "color",
+    "subtle": {
+      "$value": "oklch(0.95 0.02 90 / 0.08)",
+      "$description": "Último recurso: preferí subir de superficie antes que dibujar borde."
+    },
+    "strong": { "$value": "oklch(0.95 0.02 90 / 0.16)" },
+    "focus": {
+      "$value": "oklch(0.66 0.13 39 / 0.75)",
+      "$description": "Anillo de foco: 2px, offset 2px."
+    }
+  },
+  "halo": {
+    "$type": "shadow",
+    "edge": {
+      "$value": "inset 0 1px 0 0 oklch(0.95 0.03 90 / 0.08)",
+      "$description": "Filo de luz cálida superior — reemplaza la drop-shadow."
+    },
+    "glow": {
+      "$value": "0 0 32px 0 oklch(0.85 0.06 80 / 0.04), inset 0 1px 0 0 oklch(0.95 0.03 90 / 0.08)",
+      "$description": "Para superficies flotantes (modal, popover, toast)."
+    }
+  },
+  "scrim": {
+    "$type": "color",
+    "base": { "$value": "oklch(0.12 0.008 70 / 0.6)" }
+  }
+}

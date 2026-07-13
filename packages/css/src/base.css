@@ -1,0 +1,175 @@
+/*
+ * medano — base.css
+ * Reset + defaults. Requiere @medano-ui/tokens/vars.css cargado antes.
+ */
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 2;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--medano-surface-0);
+  color: var(--medano-ink-primary);
+  font-family: var(--medano-font-sans);
+  font-size: var(--medano-text-sm);
+  line-height: var(--medano-leading-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ---------- Tipografía ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--medano-weight-semibold);
+  letter-spacing: var(--medano-tracking-tight);
+  line-height: var(--medano-leading-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--medano-text-2xl);
+}
+h2 {
+  font-size: var(--medano-text-xl);
+}
+h3 {
+  font-size: var(--medano-text-lg);
+}
+h4 {
+  font-size: var(--medano-text-md);
+}
+
+@media (min-width: 48rem) {
+  h1 {
+    font-size: var(--medano-text-3xl);
+  }
+  h2 {
+    font-size: var(--medano-text-2xl);
+  }
+}
+
+small {
+  font-size: var(--medano-text-xs);
+  color: var(--medano-ink-secondary);
+}
+
+::selection {
+  background: var(--medano-accent-subtle);
+}
+
+/* ---------- Foco visible (global, calmo pero inequívoco) ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--medano-radius-xs);
+}
+
+/* ---------- Enlaces ---------- */
+
+a {
+  color: var(--medano-accent-base);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Scroll sereno ---------- */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--medano-surface-5) transparent;
+}
+
+/* ---------- Utilidades de superficie ---------- */
+
+.medano-surface-0 {
+  background: var(--medano-surface-0);
+}
+.medano-surface-1 {
+  background: var(--medano-surface-1);
+}
+.medano-surface-2 {
+  background: var(--medano-surface-2);
+}
+.medano-surface-3 {
+  background: var(--medano-surface-3);
+}
+.medano-surface-4 {
+  background: var(--medano-surface-4);
+}
+.medano-surface-5 {
+  background: var(--medano-surface-5);
+}
+.medano-surface-6 {
+  background: var(--medano-surface-6);
+}
+.medano-surface-7 {
+  background: var(--medano-surface-7);
+}
+
+/* Superficie flotante: luminancia + filo de luz. Nunca drop-shadow. */
+.medano-elevated {
+  box-shadow: var(--medano-halo-edge);
+}
+
+.medano-floating {
+  box-shadow: var(--medano-halo-glow);
+}
+
+/* ---------- Movimiento reducido: se respeta siempre ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

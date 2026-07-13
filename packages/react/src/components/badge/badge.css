@@ -1,0 +1,36 @@
+.medano-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--medano-space-2xs);
+  padding: var(--medano-space-3xs) var(--medano-space-xs);
+  border-radius: var(--medano-radius-full);
+  font-size: var(--medano-text-2xs);
+  font-weight: var(--medano-weight-medium);
+  letter-spacing: var(--medano-tracking-wide);
+  line-height: var(--medano-leading-tight);
+}
+
+.medano-badge[data-tone='neutral'] {
+  background: var(--medano-surface-3);
+  color: var(--medano-ink-secondary);
+}
+.medano-badge[data-tone='accent'] {
+  background: var(--medano-accent-subtle);
+  color: var(--medano-accent-base);
+}
+.medano-badge[data-tone='positive'] {
+  background: var(--medano-feedback-positive-subtle);
+  color: var(--medano-feedback-positive);
+}
+.medano-badge[data-tone='caution'] {
+  background: var(--medano-feedback-caution-subtle);
+  color: var(--medano-feedback-caution);
+}
+.medano-badge[data-tone='danger'] {
+  background: var(--medano-feedback-danger-subtle);
+  color: var(--medano-feedback-danger);
+}
+.medano-badge[data-tone='info'] {
+  background: var(--medano-feedback-info-subtle);
+  color: var(--medano-feedback-info);
+}

@@ -1,0 +1,79 @@
+.medano-slider {
+  display: grid;
+  gap: var(--medano-space-2xs);
+}
+
+.medano-slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.medano-slider__label {
+  font-size: var(--medano-text-xs);
+  font-weight: var(--medano-weight-medium);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-slider__value {
+  font-size: var(--medano-text-xs);
+  color: var(--medano-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Zona táctil generosa (44px) alrededor de un track fino */
+.medano-slider__control {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--medano-size-tap);
+  cursor: pointer;
+}
+
+.medano-slider__track {
+  position: relative;
+  inline-size: 100%;
+  block-size: 0.375rem;
+  border-radius: var(--medano-radius-full);
+  background: var(--medano-surface-3);
+}
+
+.medano-slider__indicator {
+  position: absolute;
+  inset-block: 0;
+  border-radius: inherit;
+  background: var(--medano-accent-base);
+}
+
+.medano-slider__thumb {
+  position: absolute;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border-radius: var(--medano-radius-full);
+  background: var(--medano-ink-primary);
+  box-shadow: var(--medano-halo-edge);
+  translate: -50% 0;
+  inset-block-start: 50%;
+  translate: -50% -50%;
+  transition: scale var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+[dir='rtl'] .medano-slider__thumb {
+  translate: 50% -50%;
+}
+
+.medano-slider__thumb:active {
+  scale: 1.15;
+}
+
+.medano-slider__thumb:focus-visible {
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-slider[data-disabled] {
+  opacity: 0.55;
+}
+
+.medano-slider[data-disabled] .medano-slider__control {
+  cursor: not-allowed;
+}

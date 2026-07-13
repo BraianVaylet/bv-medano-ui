@@ -1,0 +1,17 @@
+.medano-icon-button {
+  padding-inline: 0;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.medano-icon-button svg {
+  inline-size: var(--medano-size-icon-md);
+  block-size: auto;
+}
+
+.medano-icon-button[data-size='sm'] svg {
+  inline-size: var(--medano-size-icon-sm);
+}
+.medano-icon-button[data-size='lg'] svg {
+  inline-size: var(--medano-size-icon-lg);
+}

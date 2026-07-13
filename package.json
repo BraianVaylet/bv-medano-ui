@@ -1,0 +1,26 @@
+{
+  "name": "medano",
+  "private": true,
+  "version": "0.0.0",
+  "description": "medano — design system dark-first para la era de la IA ambiental",
+  "license": "MIT",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,css,md}\"",
+    "storybook": "pnpm --filter @medano-ui/storybook dev",
+    "changeset": "changeset",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "prettier": "^3.3.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,67 @@
+.medano-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--medano-space-2xs);
+}
+
+.medano-field__label {
+  font-size: var(--medano-text-xs);
+  font-weight: var(--medano-weight-medium);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-field__input {
+  block-size: var(--medano-size-control-md);
+  padding-inline: var(--medano-space-sm);
+  background: var(--medano-surface-1);
+  color: var(--medano-ink-primary);
+  border: 1px solid transparent;
+  border-radius: var(--medano-radius-sm);
+  border-start-start-radius: var(--medano-radius-quiet);
+  font-size: var(--medano-text-sm);
+  transition:
+    background-color var(--medano-duration-fast) var(--medano-ease-snap),
+    border-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-field__input::placeholder {
+  color: var(--medano-ink-muted);
+}
+
+.medano-field__input:hover:not(:disabled) {
+  background: var(--medano-surface-2);
+}
+
+/* Al enfocar, el campo sube de superficie: la atención es luz */
+.medano-field__input:focus-visible {
+  background: var(--medano-surface-2);
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-field__input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.medano-field__input[aria-invalid='true'] {
+  border-color: var(--medano-feedback-danger);
+}
+
+.medano-field__textarea {
+  block-size: auto;
+  min-block-size: calc(var(--medano-size-control-md) * 1.6);
+  padding-block: var(--medano-space-xs);
+  resize: vertical;
+  line-height: var(--medano-leading-base);
+}
+
+.medano-field__help {
+  font-size: var(--medano-text-2xs);
+  color: var(--medano-ink-muted);
+}
+
+.medano-field__error {
+  font-size: var(--medano-text-2xs);
+  color: var(--medano-feedback-danger);
+}

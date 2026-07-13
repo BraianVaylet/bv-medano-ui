@@ -1,0 +1,65 @@
+.medano-drawer__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--medano-z-overlay);
+  background: var(--medano-scrim-base);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: medano-fade-in var(--medano-duration-base) var(--medano-ease-glide);
+}
+
+.medano-drawer__backdrop[data-ending-style] {
+  opacity: 0;
+  transition: opacity var(--medano-duration-fast) var(--medano-ease-exit);
+}
+
+.medano-drawer {
+  position: fixed;
+  z-index: var(--medano-z-modal);
+  inset-block: 0;
+  inset-inline-end: 0;
+  inline-size: min(22rem, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: var(--medano-space-2xs);
+  padding: var(--medano-space-lg);
+  padding-block-end: max(var(--medano-space-lg), env(safe-area-inset-bottom));
+  overflow-y: auto;
+  background: var(--medano-surface-3);
+  border-start-start-radius: var(--medano-radius-xl);
+  border-end-start-radius: var(--medano-radius-xl);
+  box-shadow: var(--medano-halo-glow);
+  animation: medano-drawer-in var(--medano-duration-slow) var(--medano-ease-glide);
+}
+
+.medano-drawer[data-ending-style] {
+  translate: 100% 0;
+  transition: translate var(--medano-duration-base) var(--medano-ease-exit);
+}
+
+[dir='rtl'] .medano-drawer[data-ending-style] {
+  translate: -100% 0;
+}
+
+.medano-drawer__title {
+  font-size: var(--medano-text-lg);
+  font-weight: var(--medano-weight-semibold);
+  letter-spacing: var(--medano-tracking-tight);
+  color: var(--medano-ink-primary);
+}
+
+.medano-drawer__description {
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-drawer__content {
+  margin-block-start: var(--medano-space-sm);
+  flex: 1;
+}
+
+@keyframes medano-drawer-in {
+  from {
+    translate: 100% 0;
+  }
+}

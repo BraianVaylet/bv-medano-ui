@@ -1,0 +1,50 @@
+.medano-pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-3xs);
+}
+
+.medano-pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--medano-size-control-sm);
+  block-size: var(--medano-size-control-sm);
+  padding-inline: var(--medano-space-2xs);
+  border: none;
+  border-radius: var(--medano-radius-sm);
+  background: transparent;
+  color: var(--medano-ink-secondary);
+  font-size: var(--medano-text-xs);
+  font-weight: var(--medano-weight-medium);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition:
+    background-color var(--medano-duration-fast) var(--medano-ease-snap),
+    color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-pagination__button:hover:not(:disabled):not([data-current]) {
+  background: var(--medano-surface-2);
+  color: var(--medano-ink-primary);
+}
+
+.medano-pagination__button[data-current] {
+  background: var(--medano-surface-4);
+  color: var(--medano-ink-primary);
+  box-shadow: var(--medano-halo-edge);
+}
+
+.medano-pagination__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.medano-pagination__button svg {
+  inline-size: 0.625rem;
+}
+
+.medano-pagination__ellipsis {
+  padding-inline: var(--medano-space-2xs);
+  color: var(--medano-ink-ghost);
+}

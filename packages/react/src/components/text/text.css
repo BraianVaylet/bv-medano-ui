@@ -1,0 +1,31 @@
+.medano-kbd {
+  display: inline-block;
+  padding: 0.0625rem var(--medano-space-2xs);
+  border-radius: var(--medano-radius-xs);
+  background: var(--medano-surface-3);
+  box-shadow: var(--medano-halo-edge);
+  color: var(--medano-ink-secondary);
+  font-family: var(--medano-font-mono);
+  font-size: var(--medano-text-2xs);
+  line-height: var(--medano-leading-tight);
+}
+
+.medano-code {
+  padding: 0.0625rem var(--medano-space-2xs);
+  border-radius: var(--medano-radius-xs);
+  background: var(--medano-surface-2);
+  color: var(--medano-ink-primary);
+  font-family: var(--medano-font-mono);
+  font-size: 0.875em;
+}
+
+.medano-link {
+  color: var(--medano-accent-base);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  border-radius: var(--medano-radius-xs);
+}
+
+.medano-link:hover {
+  text-decoration: underline;
+}

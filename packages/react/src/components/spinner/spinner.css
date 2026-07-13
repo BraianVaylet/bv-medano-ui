@@ -1,0 +1,25 @@
+.medano-spinner {
+  display: inline-flex;
+}
+
+.medano-spinner[data-size='sm'] {
+  inline-size: var(--medano-size-icon-sm);
+}
+.medano-spinner[data-size='md'] {
+  inline-size: var(--medano-size-icon-md);
+}
+.medano-spinner[data-size='lg'] {
+  inline-size: var(--medano-size-icon-lg);
+}
+
+.medano-spinner svg {
+  inline-size: 100%;
+  block-size: auto;
+  animation: medano-spin var(--medano-duration-drift) linear infinite;
+}
+
+@keyframes medano-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

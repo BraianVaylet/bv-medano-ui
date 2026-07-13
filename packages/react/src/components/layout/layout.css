@@ -1,0 +1,34 @@
+.medano-stack {
+  display: flex;
+}
+
+.medano-container {
+  inline-size: 100%;
+  margin-inline: auto;
+  padding-inline: max(var(--medano-space-md), env(safe-area-inset-left));
+}
+
+.medano-container[data-size='sm'] {
+  max-inline-size: 40rem;
+}
+.medano-container[data-size='md'] {
+  max-inline-size: 48rem;
+}
+.medano-container[data-size='lg'] {
+  max-inline-size: 64rem;
+}
+
+.medano-separator {
+  background: var(--medano-border-subtle);
+  flex-shrink: 0;
+}
+
+.medano-separator[data-orientation='horizontal'] {
+  block-size: 1px;
+  inline-size: 100%;
+}
+
+.medano-separator[data-orientation='vertical'] {
+  inline-size: 1px;
+  align-self: stretch;
+}

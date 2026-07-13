@@ -1,0 +1,21 @@
+{
+  "name": "@medano-ui/fonts",
+  "version": "0.1.0",
+  "description": "medano Sans — tipografía variable del sistema (derivada de Hanken Grotesk, SIL OFL)",
+  "license": "MIT AND OFL-1.1",
+  "type": "module",
+  "exports": {
+    "./medano-sans.css": "./dist/medano-sans.css"
+  },
+  "files": [
+    "dist",
+    "LICENSE-OFL.txt"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node -e \"\""
+  },
+  "devDependencies": {
+    "@fontsource-variable/hanken-grotesk": "^5.1.0"
+  }
+}

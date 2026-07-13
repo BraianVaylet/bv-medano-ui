@@ -1,0 +1,57 @@
+.medano-table {
+  inline-size: 100%;
+  overflow-x: auto;
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-1);
+  box-shadow: var(--medano-halo-edge);
+}
+
+.medano-table__table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: var(--medano-text-xs);
+}
+
+.medano-table__caption {
+  padding: var(--medano-space-sm) var(--medano-space-md);
+  text-align: start;
+  font-weight: var(--medano-weight-semibold);
+  color: var(--medano-ink-primary);
+}
+
+.medano-table th {
+  padding: var(--medano-space-sm) var(--medano-space-md);
+  color: var(--medano-ink-secondary);
+  font-weight: var(--medano-weight-medium);
+  white-space: nowrap;
+}
+
+.medano-table td {
+  padding: var(--medano-space-sm) var(--medano-space-md);
+  color: var(--medano-ink-primary);
+  border-block-start: 1px solid var(--medano-border-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.medano-table th[data-align='start'],
+.medano-table td[data-align='start'] {
+  text-align: start;
+}
+.medano-table th[data-align='center'],
+.medano-table td[data-align='center'] {
+  text-align: center;
+}
+.medano-table th[data-align='end'],
+.medano-table td[data-align='end'] {
+  text-align: end;
+}
+
+/* La fila bajo el cursor sube apenas de superficie */
+.medano-table tbody tr {
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-table tbody tr:hover {
+  background: var(--medano-surface-2);
+}

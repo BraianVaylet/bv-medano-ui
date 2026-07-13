@@ -1,0 +1,65 @@
+.medano-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--medano-space-sm);
+  padding: var(--medano-space-sm) var(--medano-space-md);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-2);
+  box-shadow: var(--medano-halo-edge);
+}
+
+/* El tono es un filo lateral, no un fondo que grita */
+.medano-alert[data-tone='info'] {
+  border-inline-start: 2px solid var(--medano-feedback-info);
+}
+.medano-alert[data-tone='positive'] {
+  border-inline-start: 2px solid var(--medano-feedback-positive);
+}
+.medano-alert[data-tone='caution'] {
+  border-inline-start: 2px solid var(--medano-feedback-caution);
+}
+.medano-alert[data-tone='danger'] {
+  border-inline-start: 2px solid var(--medano-feedback-danger);
+}
+
+.medano-alert__icon {
+  display: inline-flex;
+  inline-size: var(--medano-size-icon-md);
+  flex-shrink: 0;
+  margin-block-start: 0.125rem;
+}
+
+.medano-alert[data-tone='info'] .medano-alert__icon {
+  color: var(--medano-feedback-info);
+}
+.medano-alert[data-tone='positive'] .medano-alert__icon {
+  color: var(--medano-feedback-positive);
+}
+.medano-alert[data-tone='caution'] .medano-alert__icon {
+  color: var(--medano-feedback-caution);
+}
+.medano-alert[data-tone='danger'] .medano-alert__icon {
+  color: var(--medano-feedback-danger);
+}
+
+.medano-alert__body {
+  flex: 1;
+  display: grid;
+  gap: var(--medano-space-3xs);
+}
+
+.medano-alert__title {
+  font-size: var(--medano-text-sm);
+  font-weight: var(--medano-weight-medium);
+  color: var(--medano-ink-primary);
+}
+
+.medano-alert__description {
+  font-size: var(--medano-text-xs);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-alert__action {
+  flex-shrink: 0;
+}

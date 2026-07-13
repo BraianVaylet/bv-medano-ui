@@ -1,0 +1,55 @@
+import type { ReactElement, ReactNode } from 'react';
+import { Menu as BaseMenu } from '@base-ui/react/menu';
+
+export interface MenuAction {
+  label: ReactNode;
+  onSelect: () => void;
+  /** Acción destructiva: tinta teja. */
+  danger?: boolean;
+  disabled?: boolean;
+  /** Dibuja un separador antes de este ítem. */
+  separatorBefore?: boolean;
+  /** Icono opcional (SVG currentColor). */
+  icon?: ReactNode;
+}
+
+export interface MenuProps {
+  /** Elemento que abre el menú (debe renderizar un <button>). */
+  trigger: ReactElement<Record<string, unknown>>;
+  items: MenuAction[];
+}
+
+/** Menú de acciones contextual. */
+export function Menu({ trigger, items }: MenuProps) {
+  return (
+    <BaseMenu.Root>
+      <BaseMenu.Trigger render={trigger} />
+      <BaseMenu.Portal>
+        <BaseMenu.Positioner sideOffset={6} align="start">
+          <BaseMenu.Popup className="medano-menu">
+            {items.map((item, index) => (
+              <div key={index} role="presentation">
+                {item.separatorBefore && (
+                  <div className="medano-menu__separator" role="separator" aria-hidden="true" />
+                )}
+                <BaseMenu.Item
+                  className="medano-menu__item"
+                  data-danger={item.danger || undefined}
+                  disabled={item.disabled}
+                  onClick={item.onSelect}
+                >
+                  {item.icon && (
+                    <span className="medano-menu__icon" aria-hidden="true">
+                      {item.icon}
+                    </span>
+                  )}
+                  {item.label}
+                </BaseMenu.Item>
+              </div>
+            ))}
+          </BaseMenu.Popup>
+        </BaseMenu.Positioner>
+      </BaseMenu.Portal>
+    </BaseMenu.Root>
+  );
+}

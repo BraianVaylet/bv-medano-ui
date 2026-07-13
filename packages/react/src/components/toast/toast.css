@@ -1,0 +1,90 @@
+/* Zona baja: donde vive el pulgar. En desktop, esquina inferior derecha. */
+.medano-toasts {
+  position: fixed;
+  z-index: var(--medano-z-toast);
+  inset-inline: var(--medano-space-md);
+  inset-block-end: max(var(--medano-space-md), env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: var(--medano-space-xs);
+  pointer-events: none;
+}
+
+@media (min-width: 48rem) {
+  .medano-toasts {
+    inset-inline: auto var(--medano-space-lg);
+    inline-size: 22rem;
+  }
+}
+
+.medano-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--medano-space-sm);
+  padding: var(--medano-space-sm) var(--medano-space-md);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-5);
+  box-shadow: var(--medano-halo-glow);
+  pointer-events: auto;
+  /* Se funde, no salta: deriva suave desde abajo */
+  animation: medano-toast-in var(--medano-duration-slow) var(--medano-ease-drift);
+}
+
+.medano-toast__body {
+  flex: 1;
+  display: grid;
+  gap: var(--medano-space-3xs);
+}
+
+.medano-toast__title {
+  font-size: var(--medano-text-sm);
+  font-weight: var(--medano-weight-medium);
+  color: var(--medano-ink-primary);
+}
+
+.medano-toast__description {
+  font-size: var(--medano-text-xs);
+  color: var(--medano-ink-secondary);
+}
+
+/* El tono es un filo de color al inicio, no un fondo que grita */
+.medano-toast[data-tone='positive'] {
+  border-inline-start: 2px solid var(--medano-feedback-positive);
+}
+.medano-toast[data-tone='caution'] {
+  border-inline-start: 2px solid var(--medano-feedback-caution);
+}
+.medano-toast[data-tone='danger'] {
+  border-inline-start: 2px solid var(--medano-feedback-danger);
+}
+
+.medano-toast__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: none;
+  border-radius: var(--medano-radius-full);
+  background: transparent;
+  color: var(--medano-ink-muted);
+  cursor: pointer;
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-toast__close:hover {
+  background: var(--medano-surface-6);
+  color: var(--medano-ink-primary);
+}
+
+.medano-toast__close svg {
+  inline-size: 0.625rem;
+}
+
+@keyframes medano-toast-in {
+  from {
+    opacity: 0;
+    translate: 0 var(--medano-space-xs);
+  }
+}

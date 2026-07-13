@@ -1,0 +1,92 @@
+.medano-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--medano-space-xs);
+  border: none;
+  border-radius: var(--medano-radius-md);
+  font-weight: var(--medano-weight-medium);
+  letter-spacing: var(--medano-tracking-base);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--medano-duration-fast) var(--medano-ease-snap),
+    color var(--medano-duration-fast) var(--medano-ease-snap),
+    transform var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.medano-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Tamaños — md = 44px, objetivo táctil mínimo */
+.medano-button[data-size='sm'] {
+  height: var(--medano-size-control-sm);
+  padding-inline: var(--medano-space-sm);
+  font-size: var(--medano-text-xs);
+}
+.medano-button[data-size='md'] {
+  height: var(--medano-size-control-md);
+  padding-inline: var(--medano-space-md);
+  font-size: var(--medano-text-sm);
+}
+.medano-button[data-size='lg'] {
+  height: var(--medano-size-control-lg);
+  padding-inline: var(--medano-space-lg);
+  font-size: var(--medano-text-md);
+}
+
+.medano-button[data-full-width] {
+  width: 100%;
+}
+
+/* Variantes */
+.medano-button[data-variant='primary'] {
+  background: var(--medano-accent-base);
+  color: var(--medano-ink-on-accent);
+}
+.medano-button[data-variant='primary']:hover:not(:disabled) {
+  background: var(--medano-accent-strong);
+}
+
+.medano-button[data-variant='secondary'] {
+  background: var(--medano-surface-3);
+  color: var(--medano-ink-primary);
+  box-shadow: var(--medano-halo-edge);
+}
+.medano-button[data-variant='secondary']:hover:not(:disabled) {
+  background: var(--medano-surface-4);
+}
+
+.medano-button[data-variant='ghost'] {
+  background: transparent;
+  color: var(--medano-ink-secondary);
+}
+.medano-button[data-variant='ghost']:hover:not(:disabled) {
+  background: var(--medano-surface-2);
+  color: var(--medano-ink-primary);
+}
+
+.medano-button[data-variant='danger'] {
+  background: var(--medano-feedback-danger-subtle);
+  color: var(--medano-feedback-danger);
+}
+.medano-button[data-variant='danger']:hover:not(:disabled) {
+  background: var(--medano-feedback-danger);
+  color: var(--medano-ink-on-accent);
+}
+
+/* Loading: el contenido cede el lugar al spinner sin alterar el ancho */
+.medano-button[data-loading] .medano-button__content {
+  opacity: 0;
+}
+
+.medano-button__spinner {
+  position: absolute;
+}

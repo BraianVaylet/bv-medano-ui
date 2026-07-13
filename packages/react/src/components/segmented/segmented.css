@@ -1,0 +1,68 @@
+.medano-segmented {
+  display: inline-flex;
+  gap: var(--medano-space-3xs);
+  padding: var(--medano-space-3xs);
+  border: none;
+  margin: 0;
+  border-radius: var(--medano-radius-md);
+  background: var(--medano-surface-1);
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+
+.medano-segmented[data-full-width] {
+  display: flex;
+  inline-size: 100%;
+}
+
+.medano-segmented__segment {
+  position: relative;
+  display: inline-flex;
+}
+
+.medano-segmented[data-full-width] .medano-segmented__segment {
+  flex: 1;
+}
+
+.medano-segmented__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.medano-segmented__face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  min-block-size: 2.25rem;
+  padding-inline: var(--medano-space-sm);
+  border-radius: var(--medano-radius-sm);
+  color: var(--medano-ink-secondary);
+  font-size: var(--medano-text-xs);
+  font-weight: var(--medano-weight-medium);
+  white-space: nowrap;
+  transition:
+    background-color var(--medano-duration-fast) var(--medano-ease-snap),
+    color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+/* El segmento activo sube de superficie: la selección es luz */
+.medano-segmented__input:checked + .medano-segmented__face {
+  background: var(--medano-surface-4);
+  color: var(--medano-ink-primary);
+  box-shadow: var(--medano-halo-edge);
+}
+
+.medano-segmented__input:focus-visible + .medano-segmented__face {
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-segmented__input:disabled + .medano-segmented__face {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

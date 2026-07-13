@@ -1,0 +1,58 @@
+{
+  "surface": {
+    "$type": "color",
+    "0": { "$value": "{color.arena.0}" },
+    "1": { "$value": "{color.arena.1}" },
+    "2": { "$value": "{color.arena.2}" },
+    "3": { "$value": "{color.arena.3}" },
+    "4": { "$value": "{color.arena.4}" },
+    "5": { "$value": "{color.arena.5}" },
+    "6": { "$value": "{color.arena.6}" },
+    "7": { "$value": "{color.arena.7}" }
+  },
+  "ink": {
+    "$type": "color",
+    "primary": { "$value": "{color.cacao.100}" },
+    "secondary": { "$value": "{color.cacao.70}" },
+    "muted": { "$value": "{color.cacao.50}" },
+    "ghost": { "$value": "{color.cacao.35}" },
+    "on-accent": { "$value": "oklch(0.985 0.005 95)" },
+    "inverse": { "$value": "{color.crema.100}" }
+  },
+  "accent": {
+    "$type": "color",
+    "base": { "$value": "{color.brasa.600}" },
+    "strong": { "$value": "{color.brasa.700}" },
+    "subtle": { "$value": "oklch(0.617 0.138 39 / 0.13)" }
+  },
+  "feedback": {
+    "$type": "color",
+    "positive": { "$value": "{color.salvia.600}" },
+    "positive-subtle": { "$value": "oklch(0.52 0.09 150 / 0.12)" },
+    "caution": { "$value": "{color.miel.600}" },
+    "caution-subtle": { "$value": "oklch(0.55 0.1 90 / 0.12)" },
+    "danger": { "$value": "{color.teja.600}" },
+    "danger-subtle": { "$value": "oklch(0.53 0.12 30 / 0.12)" },
+    "info": { "$value": "{color.brasa.600}" },
+    "info-subtle": { "$value": "oklch(0.52 0.13 38 / 0.12)" }
+  },
+  "border": {
+    "$type": "color",
+    "subtle": { "$value": "oklch(0.3 0.03 80 / 0.1)" },
+    "strong": { "$value": "oklch(0.3 0.03 80 / 0.18)" },
+    "focus": { "$value": "oklch(0.52 0.13 38 / 0.8)" }
+  },
+  "halo": {
+    "$type": "shadow",
+    "edge": {
+      "$value": "inset 0 1px 0 0 oklch(1 0 0 / 0.9), inset 0 0 0 1px oklch(0.3 0.04 80 / 0.06)"
+    },
+    "glow": {
+      "$value": "0 2px 16px 0 oklch(0.35 0.05 70 / 0.06), inset 0 0 0 1px oklch(0.3 0.04 80 / 0.06)"
+    }
+  },
+  "scrim": {
+    "$type": "color",
+    "base": { "$value": "oklch(0.25 0.02 80 / 0.45)" }
+  }
+}

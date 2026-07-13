@@ -1,0 +1,34 @@
+.medano-pin {
+  display: inline-flex;
+  gap: var(--medano-space-2xs);
+}
+
+.medano-pin__digit {
+  inline-size: var(--medano-size-control-md);
+  block-size: var(--medano-size-control-lg);
+  border: 1px solid transparent;
+  border-radius: var(--medano-radius-sm);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-1);
+  color: var(--medano-ink-primary);
+  font-size: var(--medano-text-lg);
+  font-weight: var(--medano-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-pin__digit:focus-visible {
+  background: var(--medano-surface-2);
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-pin__digit[data-filled] {
+  background: var(--medano-surface-2);
+}
+
+.medano-pin__digit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

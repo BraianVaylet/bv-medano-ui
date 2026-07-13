@@ -1,0 +1,39 @@
+/* Estilos de todos los componentes @medano-ui/react.
+   Requiere @medano-ui/tokens/vars.css cargado antes. */
+
+@import './components/accordion/accordion.css';
+@import './components/alert/alert.css';
+@import './components/avatar/avatar.css';
+@import './components/avatar-group/avatar-group.css';
+@import './components/badge/badge.css';
+@import './components/breadcrumb/breadcrumb.css';
+@import './components/button/button.css';
+@import './components/card/card.css';
+@import './components/checkbox/checkbox.css';
+@import './components/chip/chip.css';
+@import './components/dialog/dialog.css';
+@import './components/drawer/drawer.css';
+@import './components/empty-state/empty-state.css';
+@import './components/icon-button/icon-button.css';
+@import './components/input/input.css';
+@import './components/layout/layout.css';
+@import './components/menu/menu.css';
+@import './components/number-input/number-input.css';
+@import './components/pagination/pagination.css';
+@import './components/pin-input/pin-input.css';
+@import './components/popover/popover.css';
+@import './components/progress/progress.css';
+@import './components/radio/radio.css';
+@import './components/segmented/segmented.css';
+@import './components/select/select.css';
+@import './components/skeleton/skeleton.css';
+@import './components/slider/slider.css';
+@import './components/spinner/spinner.css';
+@import './components/stat/stat.css';
+@import './components/streaming-text/streaming-text.css';
+@import './components/switch/switch.css';
+@import './components/table/table.css';
+@import './components/tabs/tabs.css';
+@import './components/text/text.css';
+@import './components/toast/toast.css';
+@import './components/tooltip/tooltip.css';

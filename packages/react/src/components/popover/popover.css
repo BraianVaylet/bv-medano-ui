@@ -1,0 +1,19 @@
+.medano-popover {
+  z-index: var(--medano-z-overlay);
+  max-inline-size: min(20rem, calc(100vw - var(--medano-space-xl)));
+  padding: var(--medano-space-md);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-5);
+  box-shadow: var(--medano-halo-glow);
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+  animation: medano-fade-in var(--medano-duration-fast) var(--medano-ease-glide);
+}
+
+.medano-popover__title {
+  margin-block-end: var(--medano-space-2xs);
+  font-size: var(--medano-text-sm);
+  font-weight: var(--medano-weight-semibold);
+  color: var(--medano-ink-primary);
+}

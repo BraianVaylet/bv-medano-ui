@@ -1,0 +1,39 @@
+.medano-number {
+  display: flex;
+  align-items: stretch;
+  gap: var(--medano-space-3xs);
+}
+
+.medano-number__input {
+  flex: 1;
+  min-inline-size: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.medano-number__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--medano-size-control-md);
+  border: none;
+  border-radius: var(--medano-radius-sm);
+  background: var(--medano-surface-2);
+  color: var(--medano-ink-secondary);
+  cursor: pointer;
+  transition: background-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-number__step:hover:not(:disabled) {
+  background: var(--medano-surface-3);
+  color: var(--medano-ink-primary);
+}
+
+.medano-number__step:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.medano-number__step svg {
+  inline-size: 0.75rem;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@medano-ui/css",
+  "version": "0.1.0",
+  "description": "Reset y estilos base de medano, framework-agnostic (Astro, HTML puro)",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./base.css": "./src/base.css"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "node -e \"\"",
+    "test": "node -e \"\""
+  },
+  "peerDependencies": {
+    "@medano-ui/tokens": "workspace:^"
+  }
+}

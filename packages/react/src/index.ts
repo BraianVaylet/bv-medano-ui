@@ -35,6 +35,11 @@ export { Textarea, type TextareaProps } from './components/textarea/Textarea';
 export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
 export { RadioGroup, type RadioGroupProps, type RadioOption } from './components/radio/RadioGroup';
 export { Select, type SelectProps, type SelectOption } from './components/select/Select';
+export {
+  NativeSelect,
+  type NativeSelectProps,
+  type NativeSelectOption,
+} from './components/select/NativeSelect';
 export { Switch, type SwitchProps } from './components/switch/Switch';
 export { Slider, type SliderProps } from './components/slider/Slider';
 export { NumberInput, type NumberInputProps } from './components/number-input/NumberInput';
@@ -95,3 +100,6 @@ export {
 
 // IA
 export { StreamingText, type StreamingTextProps } from './components/streaming-text/StreamingText';
+
+// Patterns de app (theme-bridge, header y auth compartidos por la familia bv-*)
+export * from './patterns';

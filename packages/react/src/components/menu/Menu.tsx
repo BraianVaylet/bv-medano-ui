@@ -14,16 +14,21 @@ export interface MenuAction {
 }
 
 export interface MenuProps {
-  /** Elemento que abre el menú (debe renderizar un <button>). */
-  trigger: ReactElement<Record<string, unknown>>;
+  /**
+   * Elemento que abre el menú (debe renderizar un <button>).
+   * Opcional para menús controlados por `open`/`onOpenChange`. GAPS #1.
+   */
+  trigger?: ReactElement<Record<string, unknown>>;
   items: MenuAction[];
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 /** Menú de acciones contextual. */
-export function Menu({ trigger, items }: MenuProps) {
+export function Menu({ trigger, items, open, onOpenChange }: MenuProps) {
   return (
-    <BaseMenu.Root>
-      <BaseMenu.Trigger render={trigger} />
+    <BaseMenu.Root open={open} onOpenChange={onOpenChange}>
+      {trigger && <BaseMenu.Trigger render={trigger} />}
       <BaseMenu.Portal>
         <BaseMenu.Positioner sideOffset={6} align="start">
           <BaseMenu.Popup className="medano-menu">

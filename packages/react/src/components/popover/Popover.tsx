@@ -2,8 +2,11 @@ import type { ReactElement, ReactNode } from 'react';
 import { Popover as BasePopover } from '@base-ui/react/popover';
 
 export interface PopoverProps {
-  /** Elemento que abre el popover (debe renderizar un <button>). */
-  trigger: ReactElement<Record<string, unknown>>;
+  /**
+   * Elemento que abre el popover (debe renderizar un <button>).
+   * Opcional cuando se controla con `open`/`onOpenChange`. GAPS #1.
+   */
+  trigger?: ReactElement<Record<string, unknown>>;
   title?: ReactNode;
   children: ReactNode;
   open?: boolean;
@@ -14,7 +17,7 @@ export interface PopoverProps {
 export function Popover({ trigger, title, children, open, onOpenChange }: PopoverProps) {
   return (
     <BasePopover.Root open={open} onOpenChange={onOpenChange}>
-      <BasePopover.Trigger render={trigger} />
+      {trigger && <BasePopover.Trigger render={trigger} />}
       <BasePopover.Portal>
         <BasePopover.Positioner sideOffset={8}>
           <BasePopover.Popup className="medano-popover">

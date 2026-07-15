@@ -1,0 +1,156 @@
+/* ── Selector de acento ─────────────────────────────────────────── */
+.medano-accent-selector {
+  position: relative;
+  display: inline-flex;
+}
+
+.medano-accent-selector__current {
+  display: block;
+  inline-size: 1rem;
+  block-size: 1rem;
+  border-radius: var(--medano-radius-full);
+}
+
+.medano-accent-selector__panel {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: calc(100% + var(--medano-space-2xs));
+  z-index: var(--medano-z-overlay);
+  display: flex;
+  gap: var(--medano-space-xs);
+  padding: var(--medano-space-xs);
+  border-radius: var(--medano-radius-md);
+  border-start-start-radius: var(--medano-radius-quiet);
+  background: var(--medano-surface-5);
+  box-shadow: var(--medano-halo-glow);
+  animation: medano-fade-in var(--medano-duration-fast) var(--medano-ease-glide);
+}
+
+.medano-accent-selector__swatch {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--medano-radius-full);
+  cursor: pointer;
+  transition: transform var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-accent-selector__swatch:hover {
+  transform: scale(1.12);
+}
+
+.medano-accent-selector__swatch[data-selected] {
+  border-color: var(--medano-ink-primary);
+}
+
+/* ── Header de app ──────────────────────────────────────────────── */
+.medano-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--medano-space-md);
+}
+
+.medano-app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-sm);
+  min-inline-size: 0;
+}
+
+.medano-app-header__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.medano-app-header__titles {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.medano-app-header__name {
+  font-size: var(--medano-text-lg);
+  font-weight: var(--medano-weight-semibold);
+  line-height: var(--medano-leading-tight);
+  color: var(--medano-ink-primary);
+}
+
+.medano-app-header__subtitle {
+  font-size: var(--medano-text-xs);
+  color: var(--medano-ink-muted);
+}
+
+.medano-app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-2xs);
+  flex-shrink: 0;
+}
+
+/* ── Plantilla de autenticación ─────────────────────────────────── */
+.medano-auth {
+  inline-size: 100%;
+  max-inline-size: 24rem;
+  margin-inline: auto;
+  min-block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--medano-space-lg);
+  padding-inline: var(--medano-space-lg);
+  padding-block: var(--medano-space-2xl);
+}
+
+.medano-auth__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.medano-auth__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-sm);
+  min-inline-size: 0;
+}
+
+.medano-auth__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.medano-auth__name {
+  font-size: var(--medano-text-lg);
+  font-weight: var(--medano-weight-semibold);
+  color: var(--medano-ink-primary);
+}
+
+.medano-auth__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-2xs);
+}
+
+.medano-auth__card {
+  padding: var(--medano-space-lg);
+}
+
+.medano-auth__title {
+  font-size: var(--medano-text-xl);
+  font-weight: var(--medano-weight-semibold);
+  color: var(--medano-ink-primary);
+}
+
+.medano-auth__subtitle {
+  margin-block: var(--medano-space-2xs) var(--medano-space-md);
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+}
+
+.medano-auth__footer {
+  text-align: center;
+  font-size: var(--medano-text-sm);
+  color: var(--medano-ink-secondary);
+}

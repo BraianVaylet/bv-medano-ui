@@ -82,6 +82,15 @@
   color: var(--medano-ink-on-accent);
 }
 
+/* Ícono + texto en una sola línea: nunca envuelven aunque el botón apriete */
+.medano-button__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--medano-space-xs);
+  white-space: nowrap;
+}
+
 /* Loading: el contenido cede el lugar al spinner sin alterar el ancho */
 .medano-button[data-loading] .medano-button__content {
   opacity: 0;

@@ -5,8 +5,10 @@ export interface DialogProps {
   /**
    * Elemento que abre el diálogo. Debe renderizar un <button> nativo
    * (ej: <Button>); Base UI le inyecta los handlers y aria-*.
+   * Opcional cuando el diálogo se controla con `open`/`onOpenChange`
+   * (apertura programática, sin botón dueño). GAPS #1.
    */
-  trigger: ReactElement<Record<string, unknown>>;
+  trigger?: ReactElement<Record<string, unknown>>;
   title: ReactNode;
   description?: ReactNode;
   children?: ReactNode;
@@ -21,7 +23,7 @@ export interface DialogProps {
 export function Dialog({ trigger, title, description, children, open, onOpenChange }: DialogProps) {
   return (
     <BaseDialog.Root open={open} onOpenChange={onOpenChange}>
-      <BaseDialog.Trigger render={trigger} />
+      {trigger && <BaseDialog.Trigger render={trigger} />}
       <BaseDialog.Portal>
         <BaseDialog.Backdrop className="medano-dialog__backdrop" />
         <BaseDialog.Popup className="medano-dialog">

@@ -15,13 +15,33 @@
   padding-inline: var(--medano-space-sm);
   background: var(--medano-surface-1);
   color: var(--medano-ink-primary);
-  border: 1px solid transparent;
+  border: 1px solid var(--medano-border-subtle);
   border-radius: var(--medano-radius-sm);
   border-start-start-radius: var(--medano-radius-quiet);
   font-size: var(--medano-text-sm);
   transition:
     background-color var(--medano-duration-fast) var(--medano-ease-snap),
     border-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+/* Al pasar el cursor el borde se afirma: el campo pide interacción */
+.medano-field__input:hover:not(:disabled) {
+  border-color: var(--medano-border-strong);
+}
+
+/*
+ * Select nativo con la clase de campo (escape hatch documentado, GAPS #5).
+ * Quita la flecha del navegador (que queda pegada al borde) y dibuja una
+ * propia con aire a la derecha. Ver NativeSelect para la API de React.
+ */
+select.medano-field__input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-inline-end: var(--medano-space-xl);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a857a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--medano-space-sm) center;
+  background-size: 0.75rem;
 }
 
 .medano-field__input::placeholder {
@@ -46,6 +66,65 @@
 
 .medano-field__input[aria-invalid='true'] {
   border-color: var(--medano-feedback-danger);
+}
+
+/*
+ * Campo con adornos (prefix/suffix): el borde y la superficie viven en el
+ * contenedor; el input queda "desnudo" adentro. GAPS #4.
+ */
+.medano-field__control {
+  display: flex;
+  align-items: center;
+  gap: var(--medano-space-2xs);
+  block-size: var(--medano-size-control-md);
+  padding-inline: var(--medano-space-sm);
+  background: var(--medano-surface-1);
+  color: var(--medano-ink-primary);
+  border: 1px solid var(--medano-border-subtle);
+  border-radius: var(--medano-radius-sm);
+  border-start-start-radius: var(--medano-radius-quiet);
+  transition:
+    background-color var(--medano-duration-fast) var(--medano-ease-snap),
+    border-color var(--medano-duration-fast) var(--medano-ease-snap);
+}
+
+.medano-field__control:hover {
+  background: var(--medano-surface-2);
+  border-color: var(--medano-border-strong);
+}
+
+.medano-field__control:focus-within {
+  background: var(--medano-surface-2);
+  outline: 2px solid var(--medano-border-focus);
+  outline-offset: 2px;
+}
+
+.medano-field__control[data-invalid='true'] {
+  border-color: var(--medano-feedback-danger);
+}
+
+.medano-field__input--bare {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  block-size: 100%;
+  padding-inline: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.medano-field__input--bare:hover:not(:disabled),
+.medano-field__input--bare:focus-visible {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.medano-field__affix {
+  flex: 0 0 auto;
+  color: var(--medano-ink-muted);
+  font-size: var(--medano-text-sm);
+  white-space: nowrap;
 }
 
 .medano-field__textarea {

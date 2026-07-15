@@ -37,3 +37,6 @@
 @import './components/text/text.css';
 @import './components/toast/toast.css';
 @import './components/tooltip/tooltip.css';
+
+/* Patterns de app compartidos por la familia bv-* */
+@import './patterns/patterns.css';

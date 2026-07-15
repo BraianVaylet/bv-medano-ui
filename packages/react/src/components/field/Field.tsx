@@ -30,15 +30,26 @@ export interface FieldProps {
   error?: ReactNode;
   a11y: FieldA11y;
   className?: string;
+  /**
+   * Oculta el label visualmente pero lo mantiene para lectores de pantalla.
+   * Para búsquedas con ícono o filas compactas (GAPS #3).
+   */
+  labelHidden?: boolean;
   /** El control ya cableado con id/aria (input, textarea, etc.). */
   children: ReactNode;
 }
 
 /** Estructura común de campo de formulario: label + control + ayuda/error. */
-export function Field({ label, help, error, a11y, className, children }: FieldProps) {
+export function Field({ label, help, error, a11y, className, labelHidden, children }: FieldProps) {
   return (
     <div className={['medano-field', className].filter(Boolean).join(' ')}>
-      <label className="medano-field__label" id={a11y.labelId} htmlFor={a11y.id}>
+      <label
+        className={['medano-field__label', labelHidden && 'medano-visually-hidden']
+          .filter(Boolean)
+          .join(' ')}
+        id={a11y.labelId}
+        htmlFor={a11y.id}
+      >
         {label}
       </label>
       {children}

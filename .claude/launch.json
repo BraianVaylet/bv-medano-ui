@@ -12,6 +12,36 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--filter", "@medano-ui/storybook", "dev"],
       "port": 6006
+    },
+    {
+      "name": "wiki-of-wine",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-wiki-of-wine", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "personal-finances",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-personal-finances/packages/web", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "my-investments",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-my-investments/apps/web", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "bow-sight",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-bow-sight/packages/web", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "bv-cross",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-cross/client", "dev"],
+      "port": 5173
     }
   ]
 }

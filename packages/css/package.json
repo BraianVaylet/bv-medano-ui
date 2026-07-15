@@ -1,6 +1,6 @@
 {
   "name": "@medano-ui/css",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "Reset y estilos base de medano, framework-agnostic (Astro, HTML puro)",
   "license": "MIT",
   "author": "Braian Vaylet <braianvaylet@gmail.com>",

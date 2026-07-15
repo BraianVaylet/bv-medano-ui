@@ -2,8 +2,11 @@ import type { ReactElement, ReactNode } from 'react';
 import { Drawer as BaseDrawer } from '@base-ui/react/drawer';
 
 export interface DrawerProps {
-  /** Elemento que abre el panel (debe renderizar un <button>). */
-  trigger: ReactElement<Record<string, unknown>>;
+  /**
+   * Elemento que abre el panel (debe renderizar un <button>).
+   * Opcional cuando el panel se controla con `open`/`onOpenChange`. GAPS #1.
+   */
+  trigger?: ReactElement<Record<string, unknown>>;
   title: ReactNode;
   description?: ReactNode;
   children?: ReactNode;
@@ -18,7 +21,7 @@ export interface DrawerProps {
 export function Drawer({ trigger, title, description, children, open, onOpenChange }: DrawerProps) {
   return (
     <BaseDrawer.Root open={open} onOpenChange={onOpenChange}>
-      <BaseDrawer.Trigger render={trigger} />
+      {trigger && <BaseDrawer.Trigger render={trigger} />}
       <BaseDrawer.Portal>
         <BaseDrawer.Backdrop className="medano-drawer__backdrop" />
         <BaseDrawer.Popup className="medano-drawer">

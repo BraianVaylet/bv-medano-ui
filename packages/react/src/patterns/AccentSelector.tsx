@@ -37,10 +37,7 @@ export function AccentSelector({ label = 'Color de acento', className }: AccentS
   const activeHex = accent ?? 'var(--medano-accent-base)';
 
   return (
-    <div
-      ref={ref}
-      className={['medano-accent-selector', className].filter(Boolean).join(' ')}
-    >
+    <div ref={ref} className={['medano-accent-selector', className].filter(Boolean).join(' ')}>
       <button
         type="button"
         className="medano-button medano-icon-button"
@@ -55,7 +52,12 @@ export function AccentSelector({ label = 'Color de acento', className }: AccentS
         <span className="medano-accent-selector__current" style={{ background: activeHex }} />
       </button>
       {open && (
-        <div className="medano-accent-selector__panel" id={panelId} role="listbox" aria-label={label}>
+        <div
+          className="medano-accent-selector__panel"
+          id={panelId}
+          role="listbox"
+          aria-label={label}
+        >
           {accents.map((a) => {
             const selected = accent?.toLowerCase() === a.hex.toLowerCase();
             return (

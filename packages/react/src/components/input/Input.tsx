@@ -24,19 +24,32 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     <input
       ref={ref}
       id={a11y.id}
-      className={prefix || suffix ? 'medano-field__input medano-field__input--bare' : 'medano-field__input'}
+      className={
+        prefix || suffix ? 'medano-field__input medano-field__input--bare' : 'medano-field__input'
+      }
       aria-invalid={error ? true : undefined}
       aria-describedby={a11y.describedBy}
       {...rest}
     />
   );
   return (
-    <Field label={label} help={help} error={error} a11y={a11y} labelHidden={labelHidden} className={className}>
+    <Field
+      label={label}
+      help={help}
+      error={error}
+      a11y={a11y}
+      labelHidden={labelHidden}
+      className={className}
+    >
       {prefix || suffix ? (
         <span className="medano-field__control" data-invalid={error ? true : undefined}>
-          {prefix && <span className="medano-field__affix medano-field__affix--prefix">{prefix}</span>}
+          {prefix && (
+            <span className="medano-field__affix medano-field__affix--prefix">{prefix}</span>
+          )}
           {input}
-          {suffix && <span className="medano-field__affix medano-field__affix--suffix">{suffix}</span>}
+          {suffix && (
+            <span className="medano-field__affix medano-field__affix--suffix">{suffix}</span>
+          )}
         </span>
       ) : (
         input

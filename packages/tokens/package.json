@@ -1,6 +1,6 @@
 {
   "name": "@medano-ui/tokens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Design tokens de medano — fuente W3C DTCG compilada a CSS vars, Tailwind v4, TS y React Native",
   "license": "MIT",
   "author": "Braian Vaylet <braianvaylet@gmail.com>",

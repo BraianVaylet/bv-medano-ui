@@ -49,6 +49,16 @@ pero es el patrón para cualquier app de plata futura.
 Cada app arma su marca (SVG inline + wordmark) con el acento como fill.
 Patrón común: logo que toma `var(--medano-accent-base)` y `currentColor`.
 
+### UpdatePrompt PWA — prioridad alta (duplicado en 4: bow-sight, wiki, finances, cross)
+Aviso de "hay nueva versión" + `skipWaiting`/reload + chequeo periódico
+(1 h) y al volver a primer plano. Copiado tal cual en las 4 PWAs (2026-07-15);
+solo cambia el vocabulario de clases (cross usa ink/raised/accent).
+Candidato: `@medano-ui/pwa` con un `useAppUpdate()` (headless, sin UI) o un
+`<UpdatePrompt>` que acepte los textos. Ojo: requiere `workbox-window` como
+peer y los tipos `vite-plugin-pwa/react`.
+Contexto: con `registerType: 'autoUpdate'` la pestaña abierta sigue con el JS
+viejo hasta un refresh manual — por eso las 4 usan `'prompt'`.
+
 ### Toast (ninguna app lo tiene; medano ya lo trae)
 Quick win: adoptar `ToastProvider/useToast` en las apps para feedback de
 guardado/borrado. Hoy ese feedback es inconsistente o inexistente.

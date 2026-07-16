@@ -42,6 +42,30 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--dir", "C:/Users/braia/projects/bv-cross/client", "dev"],
       "port": 5173
+    },
+    {
+      "name": "wiki-preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "C:/Users/braia/projects/bv-wiki-of-wine/packages/web",
+        "preview",
+        "--port",
+        "4173"
+      ],
+      "port": 4173
+    },
+    {
+      "name": "cross-preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "C:/Users/braia/projects/bv-cross/client",
+        "preview",
+        "--port",
+        "4174"
+      ],
+      "port": 4174
     }
   ]
 }

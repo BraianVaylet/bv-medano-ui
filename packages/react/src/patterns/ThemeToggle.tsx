@@ -32,7 +32,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       title={isDark ? 'Modo claro' : 'Modo oscuro'}
       onClick={toggleMode}
     >
-      {isDark ? <MoonIcon /> : <SunIcon />}
+      {isDark ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 }

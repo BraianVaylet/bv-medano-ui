@@ -18,8 +18,8 @@ export interface AuthLayoutProps {
 
 /**
  * Plantilla única de autenticación (login + registro) para la familia bv-*.
- * Centra una tarjeta con marca + controles de tema; el formulario va como
- * children (item 6: un solo template, cambia logo + nombre).
+ * Columna angosta arrancando arriba, con marca + controles de tema; el
+ * formulario va como children (item 6: un solo template, cambia logo + nombre).
  */
 export function AuthLayout({
   logo,

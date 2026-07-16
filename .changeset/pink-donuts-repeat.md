@@ -1,5 +1,5 @@
 ---
-"@medano-ui/react": patch
+'@medano-ui/react': patch
 ---
 
 `ThemeToggle`: corrige los iconos invertidos. Ahora muestra el sol en modo oscuro

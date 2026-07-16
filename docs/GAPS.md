@@ -8,12 +8,14 @@ my-investments, bow-sight, cross v1) a `@medano-ui/*` 0.1.0. Dos categorías:
 ## Componentes candidatos (duplicados en ≥2 apps)
 
 ### theme-bridge — prioridad alta (duplicado en las 5)
+
 ThemeProvider (light/dark persistido en `bv-theme`) + selector de acento
 (persistido en `bv-accent`) + derivación WCAG de variantes (`base/strong/
 subtle/on-accent/focus`) + script anti-FOUC + sync de `meta[theme-color]`.
 Hoy cada app lleva su copia escribiendo sobre `--medano-accent-*`.
 Candidato: paquete `@medano-ui/theme-bridge` con el provider, `applyAccent()/
 clearAccent()` y el snippet anti-FOUC listo para copiar.
+
 - Ojo: dos convenciones de storage conviven — wiki/finances/invest guardan
   **hex** (`#8E4EC6`), bow-sight/cross guardan **id** (`'blue'`). Misma clave
   `bv-accent`: hoy cada familia ignora con gracia el formato de la otra, pero
@@ -21,35 +23,43 @@ clearAccent()` y el snippet anti-FOUC listo para copiar.
   apps sea real.
 
 ### ConfirmDialog (4 apps: wiki, finances, invest*, cross)
+
 Preset título/mensaje/confirmar-cancelar/loading/destructive sobre un modal.
 Se abre programáticamente — bloqueado por el gap de `Dialog` (ver abajo).
 (*invest lo compone inline con `Modal`.)
 
 ### Modal programático (finances, invest, bow-sight, cross)
+
 Bottom-sheet en mobile, centrado en desktop, `open/onClose`. Ver gap de API
 de `Dialog`.
 
 ### PageLoader / FullScreenSpinner (wiki, finances, cross, bow-sight)
+
 Spinner `lg` centrado a pantalla completa como fallback de Suspense/sesión.
 Trivial pero repetido 4 veces.
 
 ### CurrencyToggle ARS/USD (finances, invest)
+
 En invest quedó resuelto con `SegmentedControl`; finances aún tiene el suyo.
 Alcanza con documentar la receta, no hace falta componente nuevo.
 
 ### MoneyText / SignedAmount + formato es-AR (finances, invest)
+
 Monto con color por signo + `tabular-nums` + `Intl.NumberFormat('es-AR')`.
 
 ### NumericInput con locale es-AR (invest)
+
 Input numérico que formatea miles/decimales al tipear (`.` miles, `,`
 decimal). El `NumberInput` de medano no maneja locale. Una sola app hoy,
 pero es el patrón para cualquier app de plata futura.
 
 ### Logo con slot (wiki, invest, bow-sight, cross)
+
 Cada app arma su marca (SVG inline + wordmark) con el acento como fill.
 Patrón común: logo que toma `var(--medano-accent-base)` y `currentColor`.
 
 ### UpdatePrompt PWA — prioridad alta (duplicado en 4: bow-sight, wiki, finances, cross)
+
 Aviso de "hay nueva versión" + `skipWaiting`/reload + chequeo periódico
 (1 h) y al volver a primer plano. Copiado tal cual en las 4 PWAs (2026-07-15);
 solo cambia el vocabulario de clases (cross usa ink/raised/accent).
@@ -60,10 +70,12 @@ Contexto: con `registerType: 'autoUpdate'` la pestaña abierta sigue con el JS
 viejo hasta un refresh manual — por eso las 4 usan `'prompt'`.
 
 ### Toast (ninguna app lo tiene; medano ya lo trae)
+
 Quick win: adoptar `ToastProvider/useToast` en las apps para feedback de
 guardado/borrado. Hoy ese feedback es inconsistente o inexistente.
 
 ### Charts (finances hand-rolled, invest con recharts)
+
 Documentar paleta de series sobre tokens (`--medano-accent-base`,
 `--medano-feedback-*`). No abstraer aún (YAGNI): dos implementaciones muy
 distintas y sin tercera app que lo pida.
@@ -95,7 +107,7 @@ distintas y sin tercera app que lo pida.
    como API pública, o exponer `NativeSelect`.
 
 6. **Acento runtime.** Las 5 apps sobrescriben `--medano-accent-base/strong/
-   subtle`, `--medano-ink-on-accent` y `--medano-border-focus` con inline
+subtle`, `--medano-ink-on-accent` y `--medano-border-focus` con inline
    styles. Funciona, pero conviene documentarlo como contrato (qué vars son
    seguras de pisar) — o resolverlo en `theme-bridge`.
 

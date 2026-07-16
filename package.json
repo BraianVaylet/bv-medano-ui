@@ -1,7 +1,7 @@
 {
   "name": "medano",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "medano — design system dark-first para la era de la IA ambiental",
   "license": "MIT",
   "author": "Braian Vaylet <braianvaylet@gmail.com>",
